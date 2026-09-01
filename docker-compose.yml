@@ -1,0 +1,22 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: smartdialer-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: smartdialer
+      POSTGRES_USER: smartdialer
+      POSTGRES_PASSWORD: smartdialer_dev
+    ports:
+      - "55432:5432"
+      
+    volumes:
+      - smartdialer_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U smartdialer -d smartdialer"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  smartdialer_pgdata:
