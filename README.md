@@ -125,4 +125,4 @@ At 100 agents, PostgreSQL plus multiple workers is appropriate. At 1,000 agents,
 
 - `ARCHITECTURE_DECISIONS.md` — architecture decisions and trade-offs
 - `SCENARIOS.md` — failure analysis and predictive scenarios
-- `INTERVIEW_PREP.md` — technical discussion preparation
+
